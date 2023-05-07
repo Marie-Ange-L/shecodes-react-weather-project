@@ -63,6 +63,9 @@
 	.Weather div {
 		padding: 0 6px;
 	}
+	.Weather input {
+		font-size: smaller;
+	}
 
 	.Weather h1 {
 		font-size: 32px;
