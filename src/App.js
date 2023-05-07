@@ -10,7 +10,7 @@ export default function App() {
 			<div className="container">
 				<Weather />
 				<footer>
-					Coded by{" "}
+					SheCodes project coded by{" "}
 					<a
 						href="https://www.linkedin.com/in/marie-ange-lhernould/"
 						target="_blank"
@@ -18,7 +18,7 @@ export default function App() {
 					>
 						Marie-Ange L.
 					</a>{" "}
-					as part of her training with SheCodes &ndash; available on{" "}
+					&mdash; See on{" "}
 					<a
 						href="https://github.com/Marie-Ange-L/shecodes-react-weather-project"
 						target="_blank"
@@ -26,6 +26,7 @@ export default function App() {
 					>
 						GitHub
 					</a>
+					.
 				</footer>
 			</div>
 		</div>
