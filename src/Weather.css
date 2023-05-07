@@ -54,3 +54,43 @@
 	vertical-align: top;
 	margin-right: 5px;
 }
+
+@media (max-width: 405px) {
+	.Weather {
+		margin: 14px auto;
+	}
+
+	.Weather div {
+		padding: 0 6px;
+	}
+
+	.Weather h1 {
+		font-size: 32px;
+	}
+
+	.Weather ul {
+		font-size: 14px;
+	}
+
+	.Weather img {
+		max-width: 58px;
+	}
+	.Weather .data {
+		line-height: 18px;
+		padding-top: 3px;
+	}
+}
+
+@media (max-width: 350px) {
+	.Weather .temperature {
+		font-size: 36px;
+	}
+	.Weather .unit {
+		font-size: 12px;
+	}
+	.Weather .data {
+		font-size: 12px;
+		line-height: 16px;
+		padding-top: 5px;
+	}
+}
