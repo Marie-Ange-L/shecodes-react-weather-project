@@ -52,6 +52,8 @@
 .Weather img {
 	vertical-align: top;
 	margin-right: 5px;
+	max-width: 64px;
+	max-height: 64px;
 }
 
 @media (max-width: 405px) {
