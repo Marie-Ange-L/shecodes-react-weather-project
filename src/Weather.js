@@ -11,7 +11,8 @@ export default function Weather(props) {
 		setWeatherData({
 			ready: true,
 			city: response.data.name,
-			date: new Date((response.data.dt + response.data.timezone) * 1000),
+			date: new Date((response.data.dt + response.data.timezone - 7200) * 1000),
+			//located on GMT +2 hence minus 7200 seconds in the calculus
 			description: response.data.weather[0].description,
 			iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
 			temperature: Math.round(response.data.main.temp),
