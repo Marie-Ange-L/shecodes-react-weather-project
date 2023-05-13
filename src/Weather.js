@@ -14,7 +14,7 @@ export default function Weather(props) {
 			date: new Date((response.data.dt + response.data.timezone - 7200) * 1000),
 			//located on GMT +2 hence minus 7200 seconds in the calculus
 			description: response.data.weather[0].description,
-			iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+			icon: response.data.weather[0].icon,
 			temperature: Math.round(response.data.main.temp),
 			humidity: Math.round(response.data.main.humidity),
 			wind: Math.round(response.data.wind.speed),

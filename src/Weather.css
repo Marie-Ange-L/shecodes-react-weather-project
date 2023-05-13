@@ -49,9 +49,8 @@
 	font-size: 14px;
 }
 
-.Weather img {
+.Weather canvas {
 	vertical-align: top;
-	margin-right: 5px;
 	max-width: 64px;
 	max-height: 64px;
 }
@@ -76,8 +75,8 @@
 		font-size: 14px;
 	}
 
-	.Weather img {
-		max-width: 58px;
+	.Weather canvas {
+		max-width: 48px;
 	}
 	.Weather .data {
 		line-height: 18px;
@@ -95,6 +94,10 @@
 	.Weather .data {
 		font-size: 12px;
 		line-height: 16px;
+		padding-top: 5px;
+	}
+	.Weather canvas {
+		max-width: 38px;
 		padding-top: 5px;
 	}
 }
