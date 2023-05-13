@@ -21,10 +21,16 @@ export default function Weather(props) {
 		});
 	}
 
+	function handleErrorResponse(error) {
+		alert(
+			`${city} is not listed as a city in our app. Please check the spelling and search for a new city :)`
+		);
+	}
+
 	function search() {
 		const apiKey = "0b05732c31f31d299fde388ef85a7016";
 		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-		axios.get(apiUrl).then(handleResponse);
+		axios.get(apiUrl).then(handleResponse).catch(handleErrorResponse);
 	}
 
 	function handleSubmit(event) {
