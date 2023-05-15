@@ -1,0 +1,11 @@
+.WeatherForecast {
+	text-align: center;
+}
+
+.WeatherForecast-tempmax {
+	color: #fff;
+}
+
+.WeatherForecast-tempmin {
+	color: #a3a6a9;
+}
