@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
+import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
 	const [weatherData, setWeatherData] = useState({ ready: false });
 	const [city, setCity] = useState(props.defaultCity);
 	function handleResponse(response) {
+		console.log(response.data.coord);
 		setWeatherData({
 			ready: true,
-			city: response.data.name,
 			coordinates: response.data.coord,
 			date: new Date((response.data.dt + response.data.timezone - 7200) * 1000),
 			//located on GMT +2 hence minus 7200 seconds in the calculus
@@ -19,6 +19,7 @@ export default function Weather(props) {
 			temperature: Math.round(response.data.main.temp),
 			humidity: Math.round(response.data.main.humidity),
 			wind: Math.round(response.data.wind.speed),
+			city: response.data.name,
 		});
 	}
 
@@ -26,12 +27,6 @@ export default function Weather(props) {
 		alert(
 			`${city} is not listed as a city in our app. Please check the spelling and search for a new city :)`
 		);
-	}
-
-	function search() {
-		const apiKey = "0b05732c31f31d299fde388ef85a7016";
-		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-		axios.get(apiUrl).then(handleResponse).catch(handleErrorResponse);
 	}
 
 	function handleSubmit(event) {
@@ -42,6 +37,12 @@ export default function Weather(props) {
 
 	function handleChange(event) {
 		setCity(event.target.value);
+	}
+
+	function search() {
+		const apiKey = "f09d3949047ab6c9e3bcaf79cf61f619";
+		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+		axios.get(apiUrl).then(handleResponse).catch(handleErrorResponse);
 	}
 
 	if (weatherData.ready) {
